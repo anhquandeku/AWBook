@@ -1,0 +1,11 @@
+# Tất cả các request tới sẽ được điều hướng vào public/index.html
+
+<IfModule mod_rewrite.c>
+  Options -Multiviews
+  RewriteEngine On
+  # localhost/AWBook -> localhost/AWBook/public
+  RewriteRule ^$ public/ [L]
+
+  # localhost/AWBook/login -> localhost/AWBook/public/login
+  RewriteRule (.*)$ public/$1 [L]
+</IfModule>
