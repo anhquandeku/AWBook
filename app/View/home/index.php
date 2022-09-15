@@ -18,7 +18,6 @@ View::$activeItem = 'dashboard';
     <link rel="stylesheet" href="<?= View::assets('vendor/font-awesome-5/css/fontawesome-all.min.css') ?>" />
     <link rel="stylesheet"
         href="<?= View::assets('vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet') ?>" />
-
     <link rel="stylesheet" href="<?= View::assets('vendor/bootstrap-4.1/bootstrap.min.css')?>" />
     <link rel="stylesheet" href="<?= View::assets('vendor/animsition/animsition.min.css') ?>" />
     <link rel="stylesheet"

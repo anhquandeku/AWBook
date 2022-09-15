@@ -12,35 +12,41 @@ View::$activeItem = 'account';
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Học Tập</title>
+    <title>AWBook</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="<?= View::assets('css/bootstrap.css') ?>" />
-
-    <link rel="stylesheet" href="<?= View::assets('vendors/toastify/toastify.css') ?>" />
-    <link rel="stylesheet" href="<?= View::assets('vendors/perfect-scrollbar/perfect-scrollbar.css') ?>" />
-    <link rel="stylesheet" href="<?= View::assets('vendors/bootstrap-icons/bootstrap-icons.css') ?>" />
-    <link rel="stylesheet" href="<?= View::assets('css/app.css') ?>" />
-    <link rel="shortcut icon" href="<?= View::assets('images/favicon.ico') ?>" type="image/x-icon" />
-    <link rel="stylesheet" href="<?= View::assets('css/quan.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('css/font-face.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('vendor/font-awesome-4.7/css/font-awesome.min.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('vendor/font-awesome-5/css/fontawesome-all.min.css') ?>" />
+    <link rel="stylesheet"
+        href="<?= View::assets('vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('vendor/bootstrap-4.1/bootstrap.min.css')?>" />
+    <link rel="stylesheet" href="<?= View::assets('vendor/animsition/animsition.min.css') ?>" />
+    <link rel="stylesheet"
+        href="<?= View::assets('vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('vendor/wow/animate.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('vendor/css-hamburgers/hamburgers.min.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('vendor/slick/slick.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('vendor/select2/select2.min.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('vendor/perfect-scrollbar/perfect-scrollbar.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('css/theme.css') ?>" />
 </head>
 
-<body>
-    <div id="app">
+<body class="animsition">
+    <div class="page-wrapper">
         <!-- SIDEBAR -->
         <?php View::partial('sidebar')  ?>
-        <div id="main" class="layout-navbar">
-            <!-- HEADER -->
+        <!-- HEADER -->
+        <div class="page-container">
             <?php View::partial('header')  ?>
             <?php View::partial('changepass')  ?>
-            <div id="main-content">
+            <div class="main-content">
                 <div class="page-heading">
                     <div class="col-sm-6">
                         <h6>Tìm Kiếm</h6>
                         <div id="search-user-form" name="search-user-form">
                             <div class="form-group position-relative has-icon-right">
-                                <input id="serch-user-text" type="text" class="form-control" placeholder="Tìm kiếm" value="">
+                                <input id="serch-user-text" type="text" class="form-control" placeholder="Tìm kiếm"
+                                    value="">
                                 <div class="form-control-icon">
                                     <i class="bi bi-search"></i>
                                 </div>
@@ -143,13 +149,15 @@ View::$activeItem = 'account';
                     </div>
                 </div> -->
 
-                <div class="modal fade text-left" id="phancong-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160" aria-hidden="true">
+                <div class="modal fade text-left" id="phancong-modal" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel160" aria-hidden="true">
                     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
                         <div class="modal-content">
 
                             <div class="modal-header bg-primary">
                                 <div class="col-sm-1 offset-11" style="padding-left: 30px; padding-bottom: 38px;">
-                                    <button type="button" class="btn btn-danger ml-1" data-bs-dismiss="modal" style="padding-top: 5px;">
+                                    <button type="button" class="btn btn-danger ml-1" data-bs-dismiss="modal"
+                                        style="padding-top: 5px;">
                                         <i class="bx bx-check d-block d-sm-none"></i>
                                         <span class="d-none d-sm-block">Đóng</span>
                                     </button>
@@ -163,7 +171,8 @@ View::$activeItem = 'account';
                                                 <h5>Bảng Người Dùng</h5>
                                             </label>
                                             <label>
-                                                <h6 style="margin-left: 50px; margin-right: 10px;"> Tạo tài khoản cho:</h6>
+                                                <h6 style="margin-left: 50px; margin-right: 10px;"> Tạo tài khoản cho:
+                                                </h6>
                                             </label>
                                             <select class="btn btn btn-primary" name="pc-cbb" id="cars-pc">
                                                 <option value="staff">Nhân viên</option>
@@ -204,7 +213,8 @@ View::$activeItem = 'account';
                 </div>
 
                 <!-- Modal Thong bao -->
-                <div class="modal fade text-left" id="question-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel110" aria-hidden="true">
+                <div class="modal fade text-left" id="question-user-modal" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel110" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                         <div class="modal-content">
                             <div class="modal-header bg-success">
@@ -230,8 +240,10 @@ View::$activeItem = 'account';
                     </div>
                 </div>
                 <!-- Modal View -->
-                <div class="modal fade" id="view-user-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal fade" id="view-user-modal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                        role="document">
                         <div class="modal-content">
 
                             <div class="modal-body">
@@ -281,7 +293,8 @@ View::$activeItem = 'account';
                                     <div class="modal-body">
                                         <label for="password">Mật khẩu: </label>
                                         <div class="form-group">
-                                            <input type="password" id="password" name="password" placeholder="Mật khẩu" class="form-control">
+                                            <input type="password" id="password" name="password" placeholder="Mật khẩu"
+                                                class="form-control">
                                         </div>
                                         <label for="cars-quyen">Chức vụ: </label>
                                         <select class="form-group" name="maquyen" id="cars-quyen">
@@ -308,78 +321,84 @@ View::$activeItem = 'account';
             </div>
         </div>
     </div>
-    <script src="<?= View::assets('vendors/toastify/toastify.js') ?>"></script>
-    <script src="<?= View::assets('vendors/perfect-scrollbar/perfect-scrollbar.min.js') ?>"></script>
-    <script src="<?= View::assets('js/bootstrap.bundle.min.js') ?>"></script>
-    <script src="<?= View::assets('vendors/jquery/jquery.min.js') ?>"></script>
-    <script src="<?= View::assets('vendors/jquery/jquery.validate.js') ?>"></script>
+    <script src="<?= View::assets('vendor/jquery-3.2.1.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/bootstrap-4.1/popper.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/bootstrap-4.1/bootstrap.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/slick/slick.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/wow/wow.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/animsition/animsition.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/counter-up/jquery.waypoints.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/circle-progress/circle-progress.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/perfect-scrollbar/perfect-scrollbar.js') ?>"></script>
+    <script src="<?= View::assets('vendor/chartjs/Chart.bundle.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/select2/select2.min.js') ?>"></script>
+    <script src="<?= View::assets('vendor/counter-up/jquery.counterup.min.js') ?>"></script>
     <script src="<?= View::assets('js/main.js') ?>"></script>
-    <script src="<?= View::assets('js/changepass.js') ?>"></script>
-    <script src="<?= View::assets('js/menu.js') ?>"></script>
-    <script src="<?= View::assets('js/api.js') ?>"></script>
 
     <script>
-        let currentPage = 1
-        let checkedRows = [];
-        let quyens
-        // on ready
-        $(function() {
-            $.post(`http://localhost/Software-Technology/position/getPositions`, function(response) {
-                if (response.thanhcong) {
-                    quyens = response.data;
-                    quyens.forEach(data => {
-                        let opt = '<option value="' + data.ma_chuc_vu + '">' + data.ten_chuc_vu + '</option>';
-                        $("#cars-quyen").append(opt);
-                    });
-                    layDSUserAjax();
-                }
-            });
-            //kietm tra quyen
-
-
-
-
+    let currentPage = 1
+    let checkedRows = [];
+    let quyens
+    // on ready
+    $(function() {
+        $.post(`http://localhost/Software-Technology/position/getPositions`, function(response) {
+            if (response.thanhcong) {
+                quyens = response.data;
+                quyens.forEach(data => {
+                    let opt = '<option value="' + data.ma_chuc_vu + '">' + data.ten_chuc_vu +
+                        '</option>';
+                    $("#cars-quyen").append(opt);
+                });
+                layDSUserAjax();
+            }
         });
+        //kietm tra quyen
 
-        $("#open-add-user-btn").click(function() {
-            $('#email').val("");
-            $('#password').val("");
-            $('#maquyen').val("");
-            $('#fullname').val("");
-            $("#add-user-modal").modal('toggle')
-        });
 
-        $("#btn-createaccount").click(function() {
 
-            $("#phancong-modal").modal('toggle');
-            currentPage = 1;
-            getListAjax();
-        });
 
-        $('#cars-pc').change(function() {
-            currentPage = 1;
-            getListAjax();
-        });
+    });
 
-        function getListAjax() {
-            let search = $('#cars-pc option').filter(':selected').val();
-            if (search == 'staff') {
-                url = "http://localhost/Software-Technology/staff/getList?rowsPerPage=10&page=" + currentPage;
-                $.get(`${url}`, function(response) {
+    $("#open-add-user-btn").click(function() {
+        $('#email').val("");
+        $('#password').val("");
+        $('#maquyen').val("");
+        $('#fullname').val("");
+        $("#add-user-modal").modal('toggle')
+    });
 
-                    const table2 = $('#table2 > tbody');
-                    table2.empty();
-                    checkedRows = [];
-                    $row = 0;
-                    response.data.forEach(data => {
-                        if (search == 'staff') {
-                            ma = data.ma_nv;
-                        } else {
-                            ma = data.ma_kh;
-                        }
-                        if ($row % 2 == 0) {
+    $("#btn-createaccount").click(function() {
 
-                            table2.append(`
+        $("#phancong-modal").modal('toggle');
+        currentPage = 1;
+        getListAjax();
+    });
+
+    $('#cars-pc').change(function() {
+        currentPage = 1;
+        getListAjax();
+    });
+
+    function getListAjax() {
+        let search = $('#cars-pc option').filter(':selected').val();
+        if (search == 'staff') {
+            url = "http://localhost/Software-Technology/staff/getList?rowsPerPage=10&page=" + currentPage;
+            $.get(`${url}`, function(response) {
+
+                const table2 = $('#table2 > tbody');
+                table2.empty();
+                checkedRows = [];
+                $row = 0;
+                response.data.forEach(data => {
+                    if (search == 'staff') {
+                        ma = data.ma_nv;
+                    } else {
+                        ma = data.ma_kh;
+                    }
+                    if ($row % 2 == 0) {
+
+                        table2.append(`
                         <tr class="table-light">
                             <td>${ma}</td>
                             <td>${data.ho_ten}</td>
@@ -390,8 +409,8 @@ View::$activeItem = 'account';
                                 </button>
                             </td>
                         </tr>`);
-                        } else {
-                            table2.append(`
+                    } else {
+                        table2.append(`
                         <tr class="table-light">
                             <td>${ma}</td>
                             <td>${data.ho_ten}</td>
@@ -402,49 +421,49 @@ View::$activeItem = 'account';
                                 </button>
                             </td>
                         </tr>`);
-                        }
-                        $row += 1;
-                    });
+                    }
+                    $row += 1;
+                });
 
-                    const pagination = $('#pagination2');
-                    // Xóa phân trang cũ
-                    pagination.empty();
-                    if (response.totalPage > 1) {
-                        for (let i = 1; i <= response.totalPage; i++) {
-                            if (i == currentPage) {
-                                pagination.append(`
+                const pagination = $('#pagination2');
+                // Xóa phân trang cũ
+                pagination.empty();
+                if (response.totalPage > 1) {
+                    for (let i = 1; i <= response.totalPage; i++) {
+                        if (i == currentPage) {
+                            pagination.append(`
                         <li class="page-item active">
                             <button class="page-link" onClick='changePageGVM(${i})'>${i}</button>
                         </li>`)
-                            } else {
-                                pagination.append(`
+                        } else {
+                            pagination.append(`
                         <li class="page-item">
                             <button class="page-link" onClick='changePageGVM(${i})'>${i}</button>
                         </li>`)
-                            }
-
                         }
+
                     }
+                }
 
 
-                });
-            } else {
-                url = "http://localhost/Software-Technology/customer/getList?rowsPerPage=10&page=" + currentPage;
-                $.get(`${url}`, function(response) {
+            });
+        } else {
+            url = "http://localhost/Software-Technology/customer/getList?rowsPerPage=10&page=" + currentPage;
+            $.get(`${url}`, function(response) {
 
-                    const table2 = $('#table2 > tbody');
-                    table2.empty();
-                    checkedRows = [];
-                    $row = 0;
-                    response.data.forEach(data => {
-                        if (search == 'staff') {
-                            ma = data.ma_nv;
-                        } else {
-                            ma = data.ma_kh;
-                        }
-                        if ($row % 2 == 0) {
+                const table2 = $('#table2 > tbody');
+                table2.empty();
+                checkedRows = [];
+                $row = 0;
+                response.data.forEach(data => {
+                    if (search == 'staff') {
+                        ma = data.ma_nv;
+                    } else {
+                        ma = data.ma_kh;
+                    }
+                    if ($row % 2 == 0) {
 
-                            table2.append(`
+                        table2.append(`
                             <tr class="table-light">
                                 <td>${ma}</td>
                                 <td>${data.ho_ten}</td>
@@ -455,8 +474,8 @@ View::$activeItem = 'account';
                                     </button>
                                 </td>
                             </tr>`);
-                        } else {
-                            table2.append(`
+                    } else {
+                        table2.append(`
                                 <tr class="table-light">
                                     <td>${ma}</td>
                                     <td>${data.ho_ten}</td>
@@ -467,273 +486,276 @@ View::$activeItem = 'account';
                                         </button>
                                     </td>
                                 </tr>`);
-                        }
-                        $row += 1;
-                    });
+                    }
+                    $row += 1;
+                });
 
-                    const pagination = $('#pagination2');
-                    // Xóa phân trang cũ
-                    pagination.empty();
-                    if (response.totalPage > 1) {
-                        for (let i = 1; i <= response.totalPage; i++) {
-                            if (i == currentPage) {
-                                pagination.append(`
+                const pagination = $('#pagination2');
+                // Xóa phân trang cũ
+                pagination.empty();
+                if (response.totalPage > 1) {
+                    for (let i = 1; i <= response.totalPage; i++) {
+                        if (i == currentPage) {
+                            pagination.append(`
                                 <li class="page-item active">
                                     <button class="page-link" onClick='changePageGVM(${i})'>${i}</button>
                                 </li>`)
-                                                    } else {
-                                                        pagination.append(`
+                        } else {
+                            pagination.append(`
                                 <li class="page-item">
                                     <button class="page-link" onClick='changePageGVM(${i})'>${i}</button>
                                 </li>`)
-                            }
-
                         }
+
+                    }
+                }
+
+
+            });
+        }
+
+    }
+
+    function addTK(ma, mail, hoten) {
+        $("#phancong-modal").modal('toggle');
+        $("#add-user-modal").modal('toggle');
+        // Đặt sự kiện validate cho modal add user
+        $("form[name='add-user-form']").validate({
+            rules: {
+                password: {
+                    required: true,
+                    minlength: 8,
+                },
+            },
+            messages: {
+                password: {
+                    required: "Vui lòng nhập mật khẩu",
+                    minlength: "Mật khẩu của bạn không được ngắn hơn 8 ký tự",
+                },
+            },
+            submitHandler: function(form, event) {
+                event.preventDefault();
+                // lấy dữ liệu từ form
+                const data = Object.fromEntries(new FormData(form).entries());
+                data['email'] = mail;
+                data['fullname'] = hoten;
+                data['ma'] = ma;
+
+                $.post(`http://localhost/Software-Technology/account/create`, data, function(response) {
+                    if (response.thanhcong) {
+                        currentPage = 1;
+                        layDSUserAjax();
+                        Toastify({
+                            text: "Thêm Thành Công",
+                            duration: 1000,
+                            close: true,
+                            gravity: "top",
+                            position: "center",
+                            backgroundColor: "#4fbe87",
+                        }).showToast();
+                    } else {
+                        Toastify({
+                            text: "Thêm Thất Bại",
+                            duration: 1000,
+                            close: true,
+                            gravity: "top",
+                            position: "center",
+                            backgroundColor: "#FF6A6A",
+                        }).showToast();
                     }
 
-
+                    // Đóng modal
+                    $("#add-user-modal").modal('toggle')
                 });
+                $('#email').val("");
+                $('#password').val("");
+                $('#maquyen').val("");
+                $('#fullname').val("");
+            }
+        })
+    }
+
+    function addTKKH(ma, mail, hoten) {
+        $("#phancong-modal").modal('toggle');
+        $("#add-user-modal").modal('toggle');
+        // Đặt sự kiện validate cho modal add user
+        $("form[name='add-user-form']").validate({
+            rules: {
+                password: {
+                    required: true,
+                    minlength: 8,
+                },
+            },
+            messages: {
+                password: {
+                    required: "Vui lòng nhập mật khẩu",
+                    minlength: "Mật khẩu của bạn không được ngắn hơn 8 ký tự",
+                },
+            },
+            submitHandler: function(form, event) {
+                event.preventDefault();
+                // lấy dữ liệu từ form
+                const data = Object.fromEntries(new FormData(form).entries());
+                data['email'] = email;
+                data['fullname'] = hoten;
+                data['ma'] = ma;
+
+                $.post(`http://localhost/Software-Technology/account/create2`, data, function(response) {
+                    if (response.thanhcong) {
+                        currentPage = 1;
+                        layDSUserAjax();
+                        Toastify({
+                            text: "Thêm Thành Công",
+                            duration: 1000,
+                            close: true,
+                            gravity: "top",
+                            position: "center",
+                            backgroundColor: "#4fbe87",
+                        }).showToast();
+                    } else {
+                        Toastify({
+                            text: "Thêm Thất Bại",
+                            duration: 1000,
+                            close: true,
+                            gravity: "top",
+                            position: "center",
+                            backgroundColor: "#FF6A6A",
+                        }).showToast();
+                    }
+
+                    // Đóng modal
+                    $("#add-user-modal").modal('toggle')
+                });
+                $('#email').val("");
+                $('#password').val("");
+                $('#maquyen').val("");
+                $('#fullname').val("");
+            }
+        })
+    }
+
+    function changePage(newPage) {
+        currentPage = newPage;
+        layDSUserAjax();
+    }
+
+
+    function changePageSearch(newPage, search) {
+        currentPage = newPage;
+        layDSUserSearch(search);
+    }
+
+    $('#cars-search').change(function() {
+        currentPage = 1;
+        layDSUserSearch($('#serch-user-text').val());
+    });
+
+    $("#search-user-form").keyup(debounce(function() {
+        currentPage = 1;
+        layDSUserSearch($('#serch-user-text').val());
+    }, 200));
+
+    function layDSUserAjax() {
+        $.get(`http://localhost/Software-Technology/account/getAccount?rowsPerPage=10&page=${currentPage}`, function(
+            response) {
+            // Không được gán biến response này ra ngoài function,
+            // vì function này bất đồng bộ, khi nào gọi api xong thì response mới có dữ liệu
+            // gán ra ngoài thì code ở ngoài chạy trc khi gọi api xong.
+            //data là danh sách usser
+            //page là trang hiện tại
+            // rowsPerpage là số dòng trên 1 trang
+            // totalPage là tổng số trang
+            const table1 = $('#table1 > tbody');
+            table1.empty();
+            checkedRows = [];
+            $row = 0;
+            response.data.forEach(data => {
+                let disabled = "disabled btn icon icon-left btn-secondary";
+                let tenQuyen = "";
+                quyens.forEach(quyen => {
+                    if (quyen.ma_chuc_vu == data.ma_cv) {
+                        tenQuyen = quyen.ten_chuc_vu;
+                        return true;
+                    }
+                });
+                if ($row % 2 == 0) {
+                    let bibi = "bi bi-lock";
+                    if (data.trang_thai == 0) {
+                        bibi = "bi bi-unlock";
+                    }
+
+                    table1.append(`
+                        <tr class="table-light">
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="form-check-input form-check-success form-check-glow" id="${data.ma_tk}">
+                                </div>
+                            </td>
+                            <td>${data.username}</td>
+                            <td>${tenQuyen}</td>
+                            <td>
+                                <button onclick="viewRow('${data.username}')" type="button" class="btn btn-sm btn-outline-primary" style="padding-top: 3px; padding-bottom: 4px;">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button onclick="deleteRow('${data.username}')" type="button" class="btn btn-sm btn-outline-danger" style="padding-top: 7px; padding-bottom: 0px;">
+                                    <i class="${bibi}"></i>
+                                </button>
+                            </td>
+                        </tr>`);
+                } else {
+                    let bibi = "bi bi-lock";
+                    if (data.trang_thai == 0) {
+                        bibi = "bi bi-unlock";
+                    }
+                    table1.append(`
+                        <tr class="table-light">
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="form-check-input form-check-success form-check-glow" id="${data.ma_tk}">
+                                </div>
+                            </td>
+                            <td>${data.username}</td>
+                            <td>${tenQuyen}</td>
+                            <td>
+                                <button onclick="viewRow('${data.username}')" type="button" class="btn btn-sm btn-outline-primary" style="padding-top: 3px; padding-bottom: 4px;">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button onclick="deleteRow('${data.username}')" type="button" class="btn btn-sm btn-outline-danger" style="padding-top: 7px; padding-bottom: 0px;">
+                                    <i class="${bibi}"></i>
+                                </button>
+                            </td>
+                        </tr>`);
+                }
+                checkedRows.push(data.username);
+                $row += 1;
+            });
+
+            const pagination = $('#pagination');
+            // Xóa phân trang cũ
+            pagination.empty();
+            if (response.totalPage > 1) {
+                for (let i = 1; i <= response.totalPage; i++) {
+                    if (i == currentPage) {
+                        pagination.append(`
+                        <li class="page-item active">
+                            <button class="page-link" onClick='changePage(${i})'>${i}</button>
+                        </li>`)
+                    } else {
+                        pagination.append(`
+                        <li class="page-item">
+                            <button class="page-link" onClick='changePage(${i})'>${i}</button>
+                        </li>`)
+                    }
+
+                }
             }
 
-        }
-
-        function addTK(ma, mail, hoten) {
-            $("#phancong-modal").modal('toggle');
-            $("#add-user-modal").modal('toggle');
-            // Đặt sự kiện validate cho modal add user
-            $("form[name='add-user-form']").validate({
-                rules: {
-                    password: {
-                        required: true,
-                        minlength: 8,
-                    },
-                },
-                messages: {
-                    password: {
-                        required: "Vui lòng nhập mật khẩu",
-                        minlength: "Mật khẩu của bạn không được ngắn hơn 8 ký tự",
-                    },
-                },
-                submitHandler: function(form, event) {
-                    event.preventDefault();
-                    // lấy dữ liệu từ form
-                    const data = Object.fromEntries(new FormData(form).entries());
-                    data['email'] = mail;
-                    data['fullname'] = hoten;
-                    data['ma'] = ma;
-
-                    $.post(`http://localhost/Software-Technology/account/create`, data, function(response) {
-                        if (response.thanhcong) {
-                            currentPage = 1;
-                            layDSUserAjax();
-                            Toastify({
-                                text: "Thêm Thành Công",
-                                duration: 1000,
-                                close: true,
-                                gravity: "top",
-                                position: "center",
-                                backgroundColor: "#4fbe87",
-                            }).showToast();
-                        } else {
-                            Toastify({
-                                text: "Thêm Thất Bại",
-                                duration: 1000,
-                                close: true,
-                                gravity: "top",
-                                position: "center",
-                                backgroundColor: "#FF6A6A",
-                            }).showToast();
-                        }
-
-                        // Đóng modal
-                        $("#add-user-modal").modal('toggle')
-                    });
-                    $('#email').val("");
-                    $('#password').val("");
-                    $('#maquyen').val("");
-                    $('#fullname').val("");
-                }
-            })
-        }
-        function addTKKH(ma, mail, hoten) {
-            $("#phancong-modal").modal('toggle');
-            $("#add-user-modal").modal('toggle');
-            // Đặt sự kiện validate cho modal add user
-            $("form[name='add-user-form']").validate({
-                rules: {
-                    password: {
-                        required: true,
-                        minlength: 8,
-                    },
-                },
-                messages: {
-                    password: {
-                        required: "Vui lòng nhập mật khẩu",
-                        minlength: "Mật khẩu của bạn không được ngắn hơn 8 ký tự",
-                    },
-                },
-                submitHandler: function(form, event) {
-                    event.preventDefault();
-                    // lấy dữ liệu từ form
-                    const data = Object.fromEntries(new FormData(form).entries());
-                    data['email'] = email;
-                    data['fullname'] = hoten;
-                    data['ma'] = ma;
-
-                    $.post(`http://localhost/Software-Technology/account/create2`, data, function(response) {
-                        if (response.thanhcong) {
-                            currentPage = 1;
-                            layDSUserAjax();
-                            Toastify({
-                                text: "Thêm Thành Công",
-                                duration: 1000,
-                                close: true,
-                                gravity: "top",
-                                position: "center",
-                                backgroundColor: "#4fbe87",
-                            }).showToast();
-                        } else {
-                            Toastify({
-                                text: "Thêm Thất Bại",
-                                duration: 1000,
-                                close: true,
-                                gravity: "top",
-                                position: "center",
-                                backgroundColor: "#FF6A6A",
-                            }).showToast();
-                        }
-
-                        // Đóng modal
-                        $("#add-user-modal").modal('toggle')
-                    });
-                    $('#email').val("");
-                    $('#password').val("");
-                    $('#maquyen').val("");
-                    $('#fullname').val("");
-                }
-            })
-        }
-
-        function changePage(newPage) {
-            currentPage = newPage;
-            layDSUserAjax();
-        }
-
-
-        function changePageSearch(newPage, search) {
-            currentPage = newPage;
-            layDSUserSearch(search);
-        }
-
-        $('#cars-search').change(function() {
-            currentPage = 1;
-            layDSUserSearch($('#serch-user-text').val());
         });
+    }
 
-        $("#search-user-form").keyup(debounce(function() {
-            currentPage = 1;
-            layDSUserSearch($('#serch-user-text').val());
-        }, 200));
-
-        function layDSUserAjax() {
-            $.get(`http://localhost/Software-Technology/account/getAccount?rowsPerPage=10&page=${currentPage}`, function(response) {
-                // Không được gán biến response này ra ngoài function,
-                // vì function này bất đồng bộ, khi nào gọi api xong thì response mới có dữ liệu
-                // gán ra ngoài thì code ở ngoài chạy trc khi gọi api xong.
-                //data là danh sách usser
-                //page là trang hiện tại
-                // rowsPerpage là số dòng trên 1 trang
-                // totalPage là tổng số trang
-                const table1 = $('#table1 > tbody');
-                table1.empty();
-                checkedRows = [];
-                $row = 0;
-                response.data.forEach(data => {
-                    let disabled = "disabled btn icon icon-left btn-secondary";
-                    let tenQuyen = "";
-                    quyens.forEach(quyen => {
-                        if (quyen.ma_chuc_vu == data.ma_cv) {
-                            tenQuyen = quyen.ten_chuc_vu;
-                            return true;
-                        }
-                    });
-                    if ($row % 2 == 0) {
-                        let bibi = "bi bi-lock";
-                        if (data.trang_thai == 0) {
-                            bibi = "bi bi-unlock";
-                        }
-
-                        table1.append(`
-                        <tr class="table-light">
-                            <td>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="form-check-input form-check-success form-check-glow" id="${data.ma_tk}">
-                                </div>
-                            </td>
-                            <td>${data.username}</td>
-                            <td>${tenQuyen}</td>
-                            <td>
-                                <button onclick="viewRow('${data.username}')" type="button" class="btn btn-sm btn-outline-primary" style="padding-top: 3px; padding-bottom: 4px;">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button onclick="deleteRow('${data.username}')" type="button" class="btn btn-sm btn-outline-danger" style="padding-top: 7px; padding-bottom: 0px;">
-                                    <i class="${bibi}"></i>
-                                </button>
-                            </td>
-                        </tr>`);
-                    } else {
-                        let bibi = "bi bi-lock";
-                        if (data.trang_thai == 0) {
-                            bibi = "bi bi-unlock";
-                        }
-                        table1.append(`
-                        <tr class="table-light">
-                            <td>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="form-check-input form-check-success form-check-glow" id="${data.ma_tk}">
-                                </div>
-                            </td>
-                            <td>${data.username}</td>
-                            <td>${tenQuyen}</td>
-                            <td>
-                                <button onclick="viewRow('${data.username}')" type="button" class="btn btn-sm btn-outline-primary" style="padding-top: 3px; padding-bottom: 4px;">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button onclick="deleteRow('${data.username}')" type="button" class="btn btn-sm btn-outline-danger" style="padding-top: 7px; padding-bottom: 0px;">
-                                    <i class="${bibi}"></i>
-                                </button>
-                            </td>
-                        </tr>`);
-                    }
-                    checkedRows.push(data.username);
-                    $row += 1;
-                });
-
-                const pagination = $('#pagination');
-                // Xóa phân trang cũ
-                pagination.empty();
-                if (response.totalPage > 1) {
-                    for (let i = 1; i <= response.totalPage; i++) {
-                        if (i == currentPage) {
-                            pagination.append(`
-                        <li class="page-item active">
-                            <button class="page-link" onClick='changePage(${i})'>${i}</button>
-                        </li>`)
-                        } else {
-                            pagination.append(`
-                        <li class="page-item">
-                            <button class="page-link" onClick='changePage(${i})'>${i}</button>
-                        </li>`)
-                        }
-
-                    }
-                }
-
-            });
-        }
-
-        function layDSUserSearch(search) {
-            $.get(`http://localhost/Software-Technology/account/advancedSearch?rowsPerPage=10&page=${currentPage}&search=${search}`, function(response) {
+    function layDSUserSearch(search) {
+        $.get(`http://localhost/Software-Technology/account/advancedSearch?rowsPerPage=10&page=${currentPage}&search=${search}`,
+            function(response) {
                 // Không được gán biến response này ra ngoài function,
                 // vì function này bất đồng bộ, khi nào gọi api xong thì response mới có dữ liệu
                 // gán ra ngoài thì code ở ngoài chạy trc khi gọi api xong.
@@ -827,49 +849,152 @@ View::$activeItem = 'account';
                 }
 
             });
-        }
+    }
 
-        function viewRow(params) {
-            let data = {
-                email: params
-            };
-            $.post(`http://localhost/Software-Technology/account/viewUser`, data, function(response) {
-                if (response.thanhcong) {
-                    $("#view-hoten").val(response.ma_tk);
-                    $("#view-ms").val(response.username);
-                    let tenQuyen = "";
-                    quyens.forEach(quyen => {
-                        if (quyen.ma_chuc_vu == response.ma_cv) {
-                            tenQuyen = quyen.ten_chuc_vu;
-                            return true;
-                        }
-                    });
-                    $("#view-quyen").val(tenQuyen);
+    function viewRow(params) {
+        let data = {
+            email: params
+        };
+        $.post(`http://localhost/Software-Technology/account/viewUser`, data, function(response) {
+            if (response.thanhcong) {
+                $("#view-hoten").val(response.ma_tk);
+                $("#view-ms").val(response.username);
+                let tenQuyen = "";
+                quyens.forEach(quyen => {
+                    if (quyen.ma_chuc_vu == response.ma_cv) {
+                        tenQuyen = quyen.ten_chuc_vu;
+                        return true;
+                    }
+                });
+                $("#view-quyen").val(tenQuyen);
+            }
+        });
+        $("#view-user-modal").modal('toggle');
+    }
+
+    function resetPass(params) {
+        let data = {
+            email: params
+        };
+        $.post(`http://localhost/Software-Technology/user/resetPassword`, data, function(response) {
+            if (response.thanhcong) {
+
+                Toastify({
+                    text: "Khôi Phục Thành Công",
+                    duration: 1000,
+                    close: true,
+                    gravity: "top",
+                    position: "center",
+                    backgroundColor: "#4fbe87",
+                }).showToast();
+                $("#reset" + params).removeClass("btn-primary");
+                $("#reset" + params).addClass("disabled icon icon-left btn-secondary");
+            } else {
+                Toastify({
+                    text: "Khôi Phục Thất Bại",
+                    duration: 1000,
+                    close: true,
+                    gravity: "top",
+                    position: "center",
+                    backgroundColor: "#FF6A6A",
+                }).showToast();
+            }
+        });
+    }
+
+    function repairRow(params) {
+        let data = {
+            email: params
+        };
+
+        $.post(`http://localhost/Software-Technology/user/viewUser`, data, function(response) {
+            if (response.thanhcong) {
+                $('#re-email').val(response.TenDangNhap);
+                $('#cars-quyen-sua').val(response.MaQuyen).prop('selected', true);
+                $('#re-fullname').val(response.FullName);
+            }
+        });
+        $("#repair-user-modal").modal('toggle');
+        //Sua form
+        $("form[name='repair-user-form']").validate({
+            rules: {
+                fullname: {
+                    required: true,
+                    validateName: true,
                 }
-            });
-            $("#view-user-modal").modal('toggle');
-        }
+            },
+            messages: {
+                fullname: {
+                    required: "Vui lòng nhập họ tên",
+                }
+            },
+            submitHandler: function(form, event) {
+                event.preventDefault();
+                $("#myModalLabel110").text("Quản Lý Tài Khoản");
+                $("#question-model").text("Bạn có chắc chắn muốn sửa tài khoản này không");
+                $("#question-user-modal").modal('toggle');
+                $('#thuchien').off('click')
+                $("#thuchien").click(function() {
+                    // lấy dữ liệu từ form
 
-        function resetPass(params) {
-            let data = {
-                email: params
-            };
-            $.post(`http://localhost/Software-Technology/user/resetPassword`, data, function(response) {
+                    const data = Object.fromEntries(new FormData(form).entries());
+                    data['email'] = $('#re-email').val();
+                    $.post(`http://localhost/Software-Technology/user/repairUser`, data, function(
+                        response) {
+                        if (response.thanhcong) {
+                            currentPage = 1;
+                            layDSUserAjax();
+                            Toastify({
+                                text: "Sửa Thành Công",
+                                duration: 1000,
+                                close: true,
+                                gravity: "top",
+                                position: "center",
+                                backgroundColor: "#4fbe87",
+                            }).showToast();
+                        } else {
+                            Toastify({
+                                text: "Sửa Thất Bại",
+                                duration: 1000,
+                                close: true,
+                                gravity: "top",
+                                position: "center",
+                                backgroundColor: "#FF6A6A",
+                            }).showToast();
+                        }
+
+                        // Đóng modal
+                        $("#repair-user-modal").modal('toggle')
+                    });
+                });
+            }
+        })
+    }
+
+    function deleteRow(params) {
+        let data = {
+            email: params
+        };
+        $("#myModalLabel110").text("Quản Lý Tài Khoản");
+        $("#question-model").text("Bạn có chắc chắn muốn khóa tài khoản này không");
+        $("#question-user-modal").modal('toggle');
+        $('#thuchien').off('click');
+        $("#thuchien").click(function() {
+            $.post(`http://localhost/Software-Technology/account/delete`, data, function(response) {
                 if (response.thanhcong) {
-
                     Toastify({
-                        text: "Khôi Phục Thành Công",
+                        text: "Khóa Thành Công",
                         duration: 1000,
                         close: true,
                         gravity: "top",
                         position: "center",
                         backgroundColor: "#4fbe87",
                     }).showToast();
-                    $("#reset" + params).removeClass("btn-primary");
-                    $("#reset" + params).addClass("disabled icon icon-left btn-secondary");
+                    currentPage = 1;
+                    layDSUserAjax();
                 } else {
                     Toastify({
-                        text: "Khôi Phục Thất Bại",
+                        text: "Khóa Thất Bại",
                         duration: 1000,
                         close: true,
                         gravity: "top",
@@ -878,151 +1003,49 @@ View::$activeItem = 'account';
                     }).showToast();
                 }
             });
-        }
+        });
 
-        function repairRow(params) {
+    }
+    $("#btn-delete-user").click(function() {
+        $("#myModalLabel110").text("Quản Lý Tài Khoản");
+        $("#question-model").text("Bạn có chắc chắn muốn khóa những tài khoản này không");
+        $("#question-user-modal").modal('toggle');
+        $('#thuchien').off('click')
+        $("#thuchien").click(function() {
+            let datas = []
+            checkedRows.forEach(checkedRow => {
+                if ($('#' + checkedRow).prop("checked")) {
+                    datas.push(checkedRow);
+                }
+            });
             let data = {
-                email: params
+                emails: JSON.stringify(datas)
             };
-
-            $.post(`http://localhost/Software-Technology/user/viewUser`, data, function(response) {
+            $.post(`http://localhost/Software-Technology/account/deletes`, data, function(response) {
                 if (response.thanhcong) {
-                    $('#re-email').val(response.TenDangNhap);
-                    $('#cars-quyen-sua').val(response.MaQuyen).prop('selected', true);
-                    $('#re-fullname').val(response.FullName);
+                    Toastify({
+                        text: "Khóa Thành Công",
+                        duration: 1000,
+                        close: true,
+                        gravity: "top",
+                        position: "center",
+                        backgroundColor: "#4fbe87",
+                    }).showToast();
+                    currentPage = 1;
+                    layDSUserAjax();
+                } else {
+                    Toastify({
+                        text: "Khóa Thất Bại",
+                        duration: 1000,
+                        close: true,
+                        gravity: "top",
+                        position: "center",
+                        backgroundColor: "#FF6A6A",
+                    }).showToast();
                 }
-            });
-            $("#repair-user-modal").modal('toggle');
-            //Sua form
-            $("form[name='repair-user-form']").validate({
-                rules: {
-                    fullname: {
-                        required: true,
-                        validateName: true,
-                    }
-                },
-                messages: {
-                    fullname: {
-                        required: "Vui lòng nhập họ tên",
-                    }
-                },
-                submitHandler: function(form, event) {
-                    event.preventDefault();
-                    $("#myModalLabel110").text("Quản Lý Tài Khoản");
-                    $("#question-model").text("Bạn có chắc chắn muốn sửa tài khoản này không");
-                    $("#question-user-modal").modal('toggle');
-                    $('#thuchien').off('click')
-                    $("#thuchien").click(function() {
-                        // lấy dữ liệu từ form
-
-                        const data = Object.fromEntries(new FormData(form).entries());
-                        data['email'] = $('#re-email').val();
-                        $.post(`http://localhost/Software-Technology/user/repairUser`, data, function(response) {
-                            if (response.thanhcong) {
-                                currentPage = 1;
-                                layDSUserAjax();
-                                Toastify({
-                                    text: "Sửa Thành Công",
-                                    duration: 1000,
-                                    close: true,
-                                    gravity: "top",
-                                    position: "center",
-                                    backgroundColor: "#4fbe87",
-                                }).showToast();
-                            } else {
-                                Toastify({
-                                    text: "Sửa Thất Bại",
-                                    duration: 1000,
-                                    close: true,
-                                    gravity: "top",
-                                    position: "center",
-                                    backgroundColor: "#FF6A6A",
-                                }).showToast();
-                            }
-
-                            // Đóng modal
-                            $("#repair-user-modal").modal('toggle')
-                        });
-                    });
-                }
-            })
-        }
-
-        function deleteRow(params) {
-            let data = {
-                email: params
-            };
-            $("#myModalLabel110").text("Quản Lý Tài Khoản");
-            $("#question-model").text("Bạn có chắc chắn muốn khóa tài khoản này không");
-            $("#question-user-modal").modal('toggle');
-            $('#thuchien').off('click');
-            $("#thuchien").click(function() {
-                $.post(`http://localhost/Software-Technology/account/delete`, data, function(response) {
-                    if (response.thanhcong) {
-                        Toastify({
-                            text: "Khóa Thành Công",
-                            duration: 1000,
-                            close: true,
-                            gravity: "top",
-                            position: "center",
-                            backgroundColor: "#4fbe87",
-                        }).showToast();
-                        currentPage = 1;
-                        layDSUserAjax();
-                    } else {
-                        Toastify({
-                            text: "Khóa Thất Bại",
-                            duration: 1000,
-                            close: true,
-                            gravity: "top",
-                            position: "center",
-                            backgroundColor: "#FF6A6A",
-                        }).showToast();
-                    }
-                });
-            });
-
-        }
-        $("#btn-delete-user").click(function() {
-            $("#myModalLabel110").text("Quản Lý Tài Khoản");
-            $("#question-model").text("Bạn có chắc chắn muốn khóa những tài khoản này không");
-            $("#question-user-modal").modal('toggle');
-            $('#thuchien').off('click')
-            $("#thuchien").click(function() {
-                let datas = []
-                checkedRows.forEach(checkedRow => {
-                    if ($('#' + checkedRow).prop("checked")) {
-                        datas.push(checkedRow);
-                    }
-                });
-                let data = {
-                    emails: JSON.stringify(datas)
-                };
-                $.post(`http://localhost/Software-Technology/account/deletes`, data, function(response) {
-                    if (response.thanhcong) {
-                        Toastify({
-                            text: "Khóa Thành Công",
-                            duration: 1000,
-                            close: true,
-                            gravity: "top",
-                            position: "center",
-                            backgroundColor: "#4fbe87",
-                        }).showToast();
-                        currentPage = 1;
-                        layDSUserAjax();
-                    } else {
-                        Toastify({
-                            text: "Khóa Thất Bại",
-                            duration: 1000,
-                            close: true,
-                            gravity: "top",
-                            position: "center",
-                            backgroundColor: "#FF6A6A",
-                        }).showToast();
-                    }
-                });
             });
         });
+    });
     </script>
 </body>
 
