@@ -28,7 +28,7 @@ View::$activeItem = 'dashboard';
     <link rel="stylesheet" href="<?= View::assets('vendor/select2/select2.min.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('vendor/perfect-scrollbar/perfect-scrollbar.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('css/theme.css') ?>" />
-
+    <link rel="shortcut icon" href="<?= View::assets('images/AW.png') ?>" type="image/x-icon')" />
 </head>
 
 <body class="animsition">
