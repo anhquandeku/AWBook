@@ -13,8 +13,10 @@ View::$activeItem = 'account';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AWBook</title>
-
-    <link rel="stylesheet" href="<?= View::assets('css/font-face.css') ?>" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand%3Awght%40300%3B400%3B500%3B600&display=swap&fbclid=IwAR0uZERfSOIAx9m3ZnMDsu4wHS7olWZUtivT-1GMq-1cY_X7jWt0iyBwE5g"
+        rel="stylesheet" />
     <link rel="stylesheet" href="<?= View::assets('vendor/font-awesome-4.7/css/font-awesome.min.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('vendor/font-awesome-5/css/fontawesome-all.min.css') ?>" />
     <link rel="stylesheet"
@@ -30,6 +32,8 @@ View::$activeItem = 'account';
     <link rel="stylesheet" href="<?= View::assets('vendor/perfect-scrollbar/perfect-scrollbar.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('css/theme.css') ?>" />
     <link rel="shortcut icon" href="<?= View::assets('images/AW.png') ?>" type="image/x-icon')" />
+    <link rel="stylesheet" href="<?= View::assets('vendor/bootstrap-icons/bootstrap-icons.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('css/app.css') ?>" />
 </head>
 
 <body class="animsition">
@@ -43,7 +47,7 @@ View::$activeItem = 'account';
             <div class="main-content">
                 <div class="page-heading">
                     <div class="col-sm-6">
-                        <h6>Tìm Kiếm</h6>
+                        <h6>Tìm Kiếm người dùng</h6>
                         <div id="search-user-form" name="search-user-form">
                             <div class="form-group position-relative has-icon-right">
                                 <input id="serch-user-text" type="text" class="form-control" placeholder="Tìm kiếm"
@@ -71,10 +75,10 @@ View::$activeItem = 'account';
 
                                 <div class=" loat-start float-lg-end mb-3">
                                     <button id='btn-delete-user' class="btn btn-danger">
-                                        <i class="bi bi-trash-fill"></i> Khóa tài khoản
+                                        <i class="bi bi-trash-fill icon-mid"></i> Khóa tài khoản
                                     </button>
                                     <button id='btn-createaccount' class="btn btn-primary">
-                                        <i class="bi bi-plus"></i> Thêm tài khoản
+                                        <i class="bi bi-person-plus-fill icon-mid"></i> Thêm tài khoản
                                     </button>
                                 </div>
                             </div>
