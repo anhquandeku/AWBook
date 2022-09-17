@@ -19,9 +19,15 @@ use App\Core\View;
                         <i class="fas fa-tachometer-alt"></i>Trang chủ người dùng</a>
                 </li>
                 <li id="CN01" class=" sidebar-item  <?= View::$activeItem == 'account' ? 'active' : '' ?>">
-                    <a href="<?= View::url('account/account') ?>" class="sidebar-link">
+                    <a href="<?= View::url('account') ?>" class="sidebar-link">
                         <i class="fas fa-users"></i>
                         <span>Tài khoản</span>
+                    </a>
+                </li>
+                <li id="CN01" class=" sidebar-item  <?= View::$activeItem == 'book' ? 'active' : '' ?>">
+                    <a href="<?= View::url('book') ?>" class="sidebar-link">
+                        <i class="fas fa-users"></i>
+                        <span>Sách</span>
                     </a>
                 </li>
             </ul>
