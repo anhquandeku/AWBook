@@ -31,7 +31,7 @@ View::$activeItem = 'dashboard';
     <link rel="shortcut icon" href="<?= View::assets('images/AW.png') ?>" type="image/x-icon')" />
 </head>
 
-<body class="animsition">
+<body>
     <div class="page-wrapper">
         <!-- SIDEBAR -->
         <?php View::partial('sidebar')  ?>

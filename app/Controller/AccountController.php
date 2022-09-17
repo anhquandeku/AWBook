@@ -15,11 +15,9 @@ class AccountController extends Controller
         parent::__construct();
     }
 
-    public function account()
+    public function index()
     {
-        Auth::checkAuthentication();
-        //Auth::ktraquyen("CN01");
-        $this->View->render('account/account');
+        $this->View->render('account/index');
     }
 
     public function getAccount()
