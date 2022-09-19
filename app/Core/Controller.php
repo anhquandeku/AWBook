@@ -8,9 +8,7 @@ class Controller
 
     public function __construct()
     {
-        // Tạo session nếu chưa có
         Session::init();
-
         $this->View = new View();
     }
 }
