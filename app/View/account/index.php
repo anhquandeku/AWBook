@@ -13,8 +13,6 @@ View::$activeItem = 'account';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AWBook</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand%3Awght%40300%3B400%3B500%3B600&display=swap&fbclid=IwAR0uZERfSOIAx9m3ZnMDsu4wHS7olWZUtivT-1GMq-1cY_X7jWt0iyBwE5g" rel="stylesheet" />
     <link rel="stylesheet" href="<?= View::assets('vendor/font-awesome-4.7/css/font-awesome.min.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('vendor/font-awesome-5/css/fontawesome-all.min.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet') ?>" />
@@ -22,6 +20,8 @@ View::$activeItem = 'account';
     <link rel="shortcut icon" href="<?= View::assets('images/AW.png') ?>" type="image/x-icon')" />
     <link rel="stylesheet" href="<?= View::assets('vendor/bootstrap-icons/bootstrap-icons.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('css/app.css') ?>" />
+    <link rel="stylesheet" href="<?= View::assets('css/template.css') ?>" />
+
 </head>
 
 <body>
@@ -264,7 +264,7 @@ View::$activeItem = 'account';
             </div>
         </div>
     </div>
-    <script src="<?= View::assets('vendor/jquery-3.2.1.min.js') ?>"></script>   
+    <script src="<?= View::assets('vendor/jquery-3.2.1.min.js') ?>"></script>
     <script src="<?= View::assets('vendor/bootstrap-4.1/bootstrap.min.js') ?>"></script>
     <script src="<?= View::assets('vendor/animsition/animsition.min.js') ?>"></script>
     <script src="<?= View::assets('js/main.js') ?>"></script>
