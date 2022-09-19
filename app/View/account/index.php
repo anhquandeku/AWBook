@@ -267,7 +267,7 @@ View::$activeItem = 'account';
     <script src="<?= View::assets('vendor/jquery-3.2.1.min.js') ?>"></script>
     <script src="<?= View::assets('vendor/bootstrap-4.1/bootstrap.min.js') ?>"></script>
     <script src="<?= View::assets('vendor/animsition/animsition.min.js') ?>"></script>
-    <script src="<?= View::assets('js/main.js') ?>"></script>
+    <script src="<?= View::assets('js/app.js') ?>"></script>   
     <script>
     </script>
 </body>
