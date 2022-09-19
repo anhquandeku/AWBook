@@ -14,34 +14,21 @@ class Application
 
     private $actionName;
 
-    /**
-     * Khởi tạo app, phân tích URL, gọi controller/method
-     */
     public function __construct()
     {
-        // tạo array  create array with URL parts in $url
         $this->splitUrl();
-
-        // creates controller and action names (from URL input)
         $this->createControllerAndActionNames();
 
-        // Kiểm tra xem file controller này có tồn tại không
         if (file_exists(Config::get('PATH_CONTROLLER') . $this->controllerName . '.php')) {
-            // Chỗ này auto load không được, vì không khai báo rõ class (tên class lấy từ biến)
-            // nên phải tự require vô
             require Config::get('PATH_CONTROLLER') . $this->controllerName . '.php';
             $controller = 'App\\Controller\\' . $this->controllerName;
-            
-            // vd: controllerName là UserController -> new App\Controller\UserController
+
             $this->controller = new $controller();
 
-            // Kiểm tra xem method này có tồn tại trong controller không
             if (is_callable(array($this->controller, $this->actionName))) {
                 if (!empty($this->parameters)) {
-                    // nếu có tham số thì gọi hàm và truyền tham số
                     call_user_func_array(array($this->controller, $this->actionName), $this->parameters);
                 } else {
-                    //nếu không có tham số thì gọi bình thường 
                     $this->controller->{$this->actionName}();
                 }
             } else {
@@ -62,24 +49,13 @@ class Application
     private function splitUrl()
     {
         if (Request::get('url')) {
-
-            // localhost/mvc
-            // localhost/mvc/abv/edb
-
-            // cắt URL
-            // auth/login/1/2
-            // 0 auth
-            // 1 login
-
             $url = trim(Request::get('url'), '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
-            $url = explode('/', $url);  
+            $url = explode('/', $url);
 
-            // gán từng phần đã cắt vào các thuộc tính của class
             $this->controllerName = isset($url[0]) ? $url[0] : null;
             $this->actionName = isset($url[1]) ? $url[1] : null;
 
-            // bỏ controller name và action name trong url đã cắt (phần còn lại sẽ là parameters)
             unset($url[0], $url[1]);
             $this->parameters = array_values($url);
         }
@@ -96,7 +72,7 @@ class Application
             $this->controllerName = Config::get('DEFAULT_CONTROLLER');
         }
 
-        if (!$this->actionName OR (strlen($this->actionName) == 0)) {
+        if (!$this->actionName or (strlen($this->actionName) == 0)) {
             $this->actionName = Config::get('DEFAULT_ACTION');
         }
 

@@ -4,14 +4,8 @@ namespace App\Core;
 
 use Exception;
 
-/**
- * Class hỗ trợ đọc config
- */
 class Config
 {
-    /**
-     * static, vì config tạo ra 1 lần và dùng chung, không cần tạo nhiều instance
-     */
     public static $config;
 
     public static function get($key)

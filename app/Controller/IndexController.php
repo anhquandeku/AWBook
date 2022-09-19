@@ -13,7 +13,6 @@ class IndexController extends Controller
         Auth::checkAuthentication();
     }
 
-    // Trang mặc định của web
     public function index()
     {
         $this->View->render('home/index');
