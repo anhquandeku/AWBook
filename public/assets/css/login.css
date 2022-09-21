@@ -1,0 +1,166 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 100vh;
+}
+
+.bg-img {
+    width: 40%;
+    background-image: url('https://images.pexels.com/photos/1637455/pexels-photo-1637455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: -15rem;
+}
+
+.bg-content {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    /*background-color: white;
+    border-radius: 5px;
+    box-shadow: rgb(100 100 111 / 30%) 0px 7px 29px 0px;*/
+}
+
+.content {
+    width: 90%;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.form {
+    margin-top: 1rem;
+}
+
+.form-input {
+    margin-top: 0.7rem;
+    position: relative;
+}
+
+.form-input input,
+.form-input .label {
+    transition: all .5s;
+}
+
+.form-input input {
+    height: 3rem;
+    width: 100%;
+    padding: 0.8rem 1rem 0.5rem 1rem;
+    appearance: none;
+    border-radius: 0.5rem;
+    background-color: white;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.form-input .label {
+    position: absolute;
+    top: 1em;
+    left: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1rem;
+    font-size: 1rem;
+
+
+}
+
+.form-input .label:hover {
+    cursor: text;
+}
+
+.form-input input:focus {
+    border-color: #FFCC66;
+    border-width: 1.5px;
+}
+
+.form-input input:focus+label {
+    top: -0.4rem;
+    font-size: 0.75rem;
+    z-index: 1;
+    font-weight: bolder;
+    background-color: white;
+    color: #FFCC66;
+}
+
+.form-input input:valid+label {
+    top: -0.4rem;
+    font-size: 0.75rem;
+    z-index: 1;
+    font-weight: bolder;
+    background-color: white;
+}
+
+.form-checkbox {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    gap: 0 12.5rem;
+}
+
+.form-checkbox label>input {
+    padding-left: 10px;
+}
+
+.form-checkbox label>a {
+    color: red;
+}
+
+.btn-gradient {
+    background: linear-gradient(to right, #8DC26F, #76b852);
+    color: white;
+    font-weight: bolder;
+    width: 80%;
+    height: 3rem;
+    border-radius: 5rem;
+    margin-bottom: 1rem;
+    transition: 2s;
+
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(to right, #fdc830, #f37335);
+}
+
+.item-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.border-top {
+    border-top: 1px solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+}
+
+.login-social {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+
+}
+
+.login-social i {
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.login-social i:hover {
+    color: #777777;
+}
+
+.bxl-facebook-circle {
+    color: #3b5998;
+}
+
+.bxl-google-plus-circle {
+    color: #db4a39;
+}
