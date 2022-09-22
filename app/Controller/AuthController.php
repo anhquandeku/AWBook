@@ -22,16 +22,19 @@ class AuthController extends Controller
         return $this->View->render('auth/login');
     }
 
-    public function loginPost()
+    public function doLogin()
     {
-        Auth::checkNotAuthentication();
-        $email = Request::post('email');
+        //Auth::checkNotAuthentication();
+        $username = Request::post('username');
         $password = Request::post('password');
 
         $result = [
             'thanhcong' => true,
+            'username' => $username,
         ];
+        return $this->View->renderJSON($result);
         // Kiểm tra email có tồn tại không
+        /*
         $user = AccountModel::findOneByEmailLogin($email);
         if (!$user) {
             $result['thanhcong'] = false;
@@ -64,6 +67,7 @@ class AuthController extends Controller
         Cookie::set('user_logged_in', true);
         // can set them nhung cái cần
         return $this->View->renderJSON($result);
+        */
     }
 
     public function register()

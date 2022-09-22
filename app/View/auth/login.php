@@ -9,16 +9,19 @@ use App\Core\View;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AWBook</title>
-    <link rel="stylesheet" href="<?= View::assets('vendor/font-awesome-4.7/css/font-awesome.min.css') ?>" />
-    <link rel="stylesheet" href="<?= View::assets('vendor/font-awesome-5/css/fontawesome-all.min.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet') ?>" />
     <link rel="stylesheet" href="<?= View::assets('vendor/bootstrap-4.1/bootstrap.min.css') ?>" />
     <link rel="shortcut icon" href="<?= View::assets('images/AW.png') ?>" type="image/x-icon')" />
-    <link rel="stylesheet" href="<?= View::assets('vendor/bootstrap-icons/bootstrap-icons.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('css/app.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('css/template.css') ?>" />
     <link rel="stylesheet" href="<?= View::assets('css/login.css') ?>" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .error {
+            color: red !important;
+            font-size: 0.7rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,10 +37,10 @@ use App\Core\View;
                         </a>
                     </div>
                     <div class="form">
-                        <form action="#" class="login-form" name="login-form" method="post">
+                        <form action="<?= View::url('auth/doLogin') ?>" class="login-form" name="login-form" method="post">
                             <div class="form-input">
                                 <input id="username" type="text" name="username" class="input-text" required pattern="\S+">
-                                <label class="label" for="username">Tên đăng nhập</label>
+                                <label class="label" for="username">Email/Phone</label>
                             </div>
                             <div class="form-input">
                                 <input id="password" type="password" name="password" class="input-text" required pattern="\S+">
@@ -79,7 +82,25 @@ use App\Core\View;
     <script src="<?= View::assets('vendor/bootstrap-4.1/bootstrap.min.js') ?>"></script>
     <script src="<?= View::assets('vendor/animsition/animsition.min.js') ?>"></script>
     <script src="<?= View::assets('js/app.js') ?>"></script>
+    <script src="<?= View::assets('js/jquery.validate.js') ?>"></script>
     <script>
+        $('.input-text').change(function() {
+            var temp = $(this).val().trim();
+            $(this).val(temp);
+        });
+        $(function() {
+            $("form[name='login-form']").submit(function(event) {
+                let data = $(this).serializeArray();
+                $.ajax({
+                    method: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: data,
+                }).done(function(response) {
+                    alert(response.username);
+                })
+                event.preventDefault();
+            })
+        });
     </script>
 </body>
 
