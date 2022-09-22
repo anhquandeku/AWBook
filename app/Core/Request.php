@@ -58,6 +58,13 @@ class Request
         return null;
     }
 
+    public static function request($key, $clean = true){
+        if(empty($_REQUEST[$key])){
+            return null;
+        }
+        return $_REQUEST[$key];
+    }
+
     /**
      * Return giá trị của key ở biến COOKIE
      * @param mixed $key key
