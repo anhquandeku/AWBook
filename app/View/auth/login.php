@@ -37,7 +37,7 @@ use App\Core\View;
                         </a>
                     </div>
                     <div class="form">
-                        <form action="<?= View::url('auth/doLogin') ?>" class="login-form" name="login-form" method="post">
+                        <form action="<?= View::url('auth/doLogin') ?>" class="login-form" name="login-form" method="POST">
                             <div class="form-input">
                                 <input id="username" type="text" name="username" class="input-text" required pattern="\S+">
                                 <label class="label" for="username">Email/Phone</label>
@@ -82,7 +82,7 @@ use App\Core\View;
     <script src="<?= View::assets('vendor/bootstrap-4.1/bootstrap.min.js') ?>"></script>
     <script src="<?= View::assets('vendor/animsition/animsition.min.js') ?>"></script>
     <script src="<?= View::assets('js/app.js') ?>"></script>
-    <script src="<?= View::assets('js/jquery.validate.js') ?>"></script>
+ 
     <script>
         $('.input-text').change(function() {
             var temp = $(this).val().trim();
@@ -96,7 +96,7 @@ use App\Core\View;
                     url: $(this).attr('action'),
                     data: data,
                 }).done(function(response) {
-                    alert(response.username);
+                    alert(response.summary);
                 })
                 event.preventDefault();
             })

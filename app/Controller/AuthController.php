@@ -18,56 +18,54 @@ class AuthController extends Controller
 
     public function login()
     {
-        Auth::checkNotAuthentication();
+        //Auth::checkNotAuthentication();
         return $this->View->render('auth/login');
     }
 
     public function doLogin()
     {
         //Auth::checkNotAuthentication();
-        $username = Request::post('username');
-        $password = Request::post('password');
-
+        $username = Request::request('username');
+        $password = Request::request('password');
         $result = [
             'thanhcong' => true,
-            'username' => $username,
         ];
-        return $this->View->renderJSON($result);
         // Kiểm tra email có tồn tại không
-        /*
-        $user = AccountModel::findOneByEmailLogin($email);
-        if (!$user) {
-            $result['thanhcong'] = false;
-            $result['summary'] = 'Tên đăng nhập hoặc mật khẩu không chính xác';
-            return $this->View->renderJSON($result);
-        } 
+        $user = AccountModel::findOneByUsername($username);
 
 
-        // Kiểm tra password
-        $isValid = password_verify($password, $user->hash_password);
-        if (!$isValid) {
+        if (empty($user)) {
             $result['thanhcong'] = false;
             $result['summary'] = 'Tên đăng nhập hoặc mật khẩu không chính xác';
             return $this->View->renderJSON($result);
         }
-        
-        // Kiểm tra tài lhoanr hoạt động
-        if($user->trang_thai == 0){
+        //Kiem tra password
+        if ($user->MatKhau != $password) {
+            $result['thanhcong'] = false;
+            $result['summary'] = 'Tên đăng nhập hoặc mật khẩu không chính xác';
+            return $this->View->renderJSON($result);
+        }
+        //Kiem tra trang thai hoat dong
+        if ($user->TrangThai == 0) {
             $result['thanhcong'] = false;
             $result['summary'] = 'Tài khoản đã bị khóa';
             return $this->View->renderJSON($result);
         }
-
-        // Cookie::set('user_id', $user->id);
-        $ho_ten = AccountModel::findHoTen($user->ma_cv,$user->ma_tk);
-        Cookie::set('user_fullname', $ho_ten->ho_ten);
-        Cookie::set('user_email', $user->username);
-        Cookie::set('user_quyen',$user->ma_cv);
-        Cookie::set('user_matk',$user->ma_tk);
-        Cookie::set('user_logged_in', true);
-        // can set them nhung cái cần
         return $this->View->renderJSON($result);
-        */
+
+
+
+        // Kiểm tra password
+        /*$isValid = password_verify($password, $user->hash_password);
+        if (!$isValid) {
+            $result['thanhcong'] = false;
+            $result['summary'] = 'Tên đăng nhập hoặc mật khẩu không chính xác';
+            return $this->View->renderJSON($result);
+        }*/
+
+        Cookie::set('user_id', $user->IdTaiKhoan);
+        Cookie::set('user_username', $user->TenDangNhap);
+        Cookie::set('user_logged_in', true);
     }
 
     public function register()
@@ -89,7 +87,7 @@ class AuthController extends Controller
         $password = Request::post('password');
         $fullname = Request::post('fullname');
         $maquyen = Request::post('maquyen');
-        AccountModel::create($email, $password, $fullname,$maquyen);
+        AccountModel::create($email, $password, $fullname, $maquyen);
         Redirect::to('auth/login');
     }
 
